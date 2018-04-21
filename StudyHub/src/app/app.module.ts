@@ -14,6 +14,7 @@ import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { AuthService } from './auth.service';
+import { EventsComponent } from './events/events.component';
 
 
 // import * as firebase from 'firebase';
@@ -22,7 +23,8 @@ import { AuthService } from './auth.service';
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    EventsComponent
     
   ],
   imports: [
