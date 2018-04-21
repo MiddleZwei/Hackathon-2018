@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-events',
@@ -7,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventsComponent implements OnInit {
 
+
+    
   constructor() { }
 
   ngOnInit() {
-    
   }
 
+  iDidNotHitHer() { 
+   console.log("Lyoha marry me, please");
+  }
 }

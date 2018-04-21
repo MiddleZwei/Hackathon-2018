@@ -7,7 +7,6 @@ import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from '../environments/environment';
@@ -15,6 +14,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { AuthService } from './auth.service';
 import { EventsComponent } from './events/events.component';
+import { CategoriesComponent } from './categories/categories.component';
 
 
 // import * as firebase from 'firebase';
@@ -24,8 +24,9 @@ import { EventsComponent } from './events/events.component';
   declarations: [
     AppComponent,
     LoginComponent,
-    EventsComponent
-    
+    EventsComponent,
+    CategoriesComponent
+
   ],
   imports: [
     BrowserModule,

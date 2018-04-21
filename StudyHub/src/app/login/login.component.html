@@ -1,27 +1,26 @@
 <div class="login-wrapper">
-        <!-- <h1 *ngIf="authService.user | async">Welcome {{ (authService.user | async)?.email }}!</h1> -->
-  <form class="login" > <!-- (ngSubmit)="onSubmit(f)" #f="ngForm" -->
+  <form class="login">
       <label class="title">
           <h3 class="welcome">Welcome to</h3>
-          Study Hub
- +          <h5 class="hint">Use your account to sign in or create one now</h5>
+         Study Hub
+          <h5 class="hint">Use your account to sign in or create one now</h5>
       </label>
       <div class="login-group">
-          
+
           <input class="username" [(ngModel)]="email" name="email" type="text" id="login_username" placeholder="Username">
-          <input class="password" [(ngModel)]="password" name="password" type="password" id="login_password" placeholder="Password">
+          <input class="password" [(ngModel)]="password" type="password" id="login_password" placeholder="Password">
           <div class="checkbox">
               <input type="checkbox" id="rememberme">
               <label for="rememberme">
                   Remember me
               </label>
           </div>
-          <!-- <div class="error active"> -->
-              <!-- Invalid user name or password -->
-          <!-- </div> -->
-          
-          <button type="submit" (click)="signup()" class="btn btn-primary">SIGNUP</button>
-          <!-- <a href="javascript://" class="signup">Sign up for a Company ID</a> -->
+
+          <!-- <div class="error active">
+              Invalid user name or password
+          </div> -->
+          <button type="submit" (click)="signup()" class="btn btn-primary">NEXT</button>
+          <!-- <a href="javascript://" class="signup">Sign up</a> -->
       </div>
   </form>
 </div>
