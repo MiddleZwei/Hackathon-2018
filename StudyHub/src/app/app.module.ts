@@ -8,19 +8,32 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { AngularFireModule } from 'angularfire2';
+import { environment } from '../environments/environment';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
+import { AuthService } from './auth.service';
+
+
+// import * as firebase from 'firebase';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent
-  
+    
   ],
   imports: [
     BrowserModule,
     ClarityModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
