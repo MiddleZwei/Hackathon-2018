@@ -7,18 +7,24 @@ import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { EventsComponent } from './events/events.component';
+import { CategoriesComponent } from './categories/categories.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    EventsComponent,
+    CategoriesComponent
   
   ],
   imports: [
     BrowserModule,
     ClarityModule,
-    AppRoutingModule
+    AppRoutingModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
