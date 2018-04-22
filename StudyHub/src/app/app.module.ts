@@ -9,8 +9,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { EventsComponent } from './events/events.component';
 import { CategoriesComponent } from './categories/categories.component';
-
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatCheckboxModule, MatToolbarModule, MatSidenavModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,10 @@ import { CategoriesComponent } from './categories/categories.component';
     BrowserModule,
     ClarityModule,
     AppRoutingModule,
-
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]

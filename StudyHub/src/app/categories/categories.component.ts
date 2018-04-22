@@ -12,4 +12,7 @@ export class CategoriesComponent implements OnInit {
   ngOnInit() {
   }
 
+  iDidNotHitHer() { 
+    console.log("Lyoha marry me, please");
+   }
 }

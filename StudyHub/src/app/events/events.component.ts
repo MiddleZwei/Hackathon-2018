@@ -14,7 +14,5 @@ export class EventsComponent implements OnInit {
   ngOnInit() {
   }
 
-  iDidNotHitHer() { 
-   console.log("Lyoha marry me, please");
-  }
+  
 }

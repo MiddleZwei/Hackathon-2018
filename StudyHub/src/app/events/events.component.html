@@ -1,27 +1,30 @@
-<header class="header header-2">
-    <div class="branding">
-        <a href="..." class="nav-link">
-            <clr-icon shape="clock" class="is-inverse"></clr-icon>
-            <span class="title">All Events</span>
-        </a>
-    </div>
-  
-  <div class="header-actions">
-     
-      <button class="btn btn-inverse" id="Add" (click)="iDidNotHitHer()">I did not hit her!
-        </button>
-        
-  
-      <clr-dropdown>
-          <button class="nav-icon" clrDropdownTrigger>
-              <clr-icon shape="cog"></clr-icon>
-              <clr-icon shape="caret down"></clr-icon>
-          </button>
-          <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
-              <a href="..." clrDropdownItem>Categories</a>
-              <a href="..." clrDropdownItem>Events</a> 
-              <a href="..." clrDropdownItem>Log out</a>
-          </clr-dropdown-menu>
-      </clr-dropdown>
-  </div>
-</header>
+<header class="header header-2" style="overflow: hidden; position: relative;">
+        <div class="branding">
+            <a href="..." class="nav-link">
+                <clr-icon shape="clock" class="is-inverse"></clr-icon>
+                <span class="title">All Events</span>
+            </a>
+        </div>
+      
+      <div class="header-actions" >
+         
+          <button class="btn btn-inverse" id="Add" (click)="iDidNotHitHer()">I did not hit her!
+            </button>
+            
+      
+          <clr-dropdown  >
+              <button class="nav-icon" clrDropdownTrigger>
+                  <clr-icon shape="cog"></clr-icon>
+                  <clr-icon shape="caret down"></clr-icon>
+              </button>
+              <clr-dropdown-menu *clrIfOpen  clrPosition="bottom-right">
+                  <p clrDropdownItem (click)="sidenav.toggle()">Categories</p>
+                  <a href="..." clrDropdownItem>Events</a> 
+                  <a href="..." clrDropdownItem>Log out</a>
+              </clr-dropdown-menu>
+          </clr-dropdown>
+      </div>
+    </header>
+    
+
+ 
