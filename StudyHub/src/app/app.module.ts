@@ -13,7 +13,6 @@ import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { AuthService } from './auth.service';
-import { EventsComponent } from './events/events.component';
 import { CategoriesComponent } from './categories/categories.component';
 
 import {MatButtonModule, MatCheckboxModule, MatToolbarModule, MatSidenavModule} from '@angular/material';
@@ -29,7 +28,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   declarations: [
     AppComponent,
     LoginComponent,
-    EventsComponent,
+    // EventsComponent,
     CategoriesComponent,
     // AddEventPopUpComponent,
     AddEventDialogComponent
