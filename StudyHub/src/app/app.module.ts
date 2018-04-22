@@ -15,7 +15,10 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AuthService } from './auth.service';
 import { EventsComponent } from './events/events.component';
 import { CategoriesComponent } from './categories/categories.component';
-
+import { MatCardModule, MatDialogModule, MatButtonModule } from '@angular/material';
+// import { AddEventPopUpComponent } from './add-event-pop-up/add-event-pop-up.component';
+import { AddEventDialogComponent } from './add-event-pop-up/add-event-dialog/add-event-dialog.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // import * as firebase from 'firebase';
 
@@ -25,7 +28,9 @@ import { CategoriesComponent } from './categories/categories.component';
     AppComponent,
     LoginComponent,
     EventsComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    // AddEventPopUpComponent,
+    AddEventDialogComponent
 
   ],
   imports: [
@@ -36,7 +41,14 @@ import { CategoriesComponent } from './categories/categories.component';
     HttpModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    MatDialogModule,
+    MatCardModule,
+    MatButtonModule,
+    BrowserAnimationsModule
+  ],
+  entryComponents: [
+    AddEventDialogComponent
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
