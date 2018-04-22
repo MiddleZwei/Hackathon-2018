@@ -57,6 +57,7 @@ export class AuthService {
 
   login(email: string, password: string) {
     this.firebaseAuth
+    //careful below
       .auth
       .signInWithEmailAndPassword(email, password)
       .then(value => {
@@ -73,4 +74,3 @@ export class AuthService {
       .signOut();
   }
 }
-

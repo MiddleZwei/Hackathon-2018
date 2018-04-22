@@ -11,9 +11,11 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+// import { DatePipe } from '@angular/common';
 
 import { AuthService } from './auth.service';
 import { CategoriesComponent } from './categories/categories.component';
+
 
 import {MatButtonModule, MatCheckboxModule, MatToolbarModule, MatSidenavModule} from '@angular/material';
 import { MatCardModule, MatDialogModule} from '@angular/material';

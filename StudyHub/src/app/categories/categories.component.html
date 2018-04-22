@@ -11,8 +11,8 @@
     </mat-card-content>
   </mat-card> -->
 
-  <mat-sidenav-container>
-    <mat-sidenav #sidenav mode="side" opened="false" style="overflow: hidden !important;">
+  <mat-sidenav-container >
+    <mat-sidenav #sidenav  mode="side" style="overflow: hidden !important;">
         <div class="canvas-side"> 
         <header style="overflow: hidden !important;">
         <form class="search" (submit)="onSubmit()">
@@ -21,15 +21,14 @@
             </label>
         </form>
         </header>   
-          <h1>Testssssss</h1>
-          <!-- <div class="container">
-  <p>Show all users</p>
-  <ul>
-  <li *ngFor="let user of users | async">
-       {{ user.name | json }}
-    </li>
-  </ul>
-</div> -->
+          <!-- <h1>Categories</h1> -->
+          <h2>Categories</h2>
+          <div class="random" *ngFor="let cat of categories">
+              {{cat}}
+          </div>
+          <!-- <button class="btn btn-inverse" id="Add" (click)="showCategories()">I did not hit her!
+            </button> -->
+
         </div>
     </mat-sidenav>
     
@@ -42,9 +41,10 @@
             </a>
         </div>
         
+        
       <div class="header-actions" >
          
-          <button class="btn btn-inverse" id="Add" (click)="openAddEventDialog()">I did not hit her!
+          <button class="btn btn-inverse" id="Add" (click)="openAddEventDialog()">Add event
             </button>
             
       
@@ -61,7 +61,28 @@
           </clr-dropdown>
       </div>
     </header>
-    <h1>wdog  w pqj3qepoij</h1>
+    <h1>Events</h1>
+    <!-- <div class="random" *ngFor="let event of events">
+            {{event}}
+    </div> -->
+    <clr-datagrid>
+            <clr-dg-column>Name</clr-dg-column>
+            <!-- <clr-dg-column>Date</clr-dg-column> -->
+            <clr-dg-column>Categories</clr-dg-column>
+            <clr-dg-column>Description</clr-dg-column>
+        
+            <clr-dg-row *ngFor="let event of events">
+                <clr-dg-cell>{{event.name}}</clr-dg-cell>
+                <!-- <clr-dg-cell>{{event.date}}</clr-dg-cell> -->
+                clr-dg-cell *ngIf="event.programming === true">Programming</clr-dg-cell>
+                <clr-dg-cell *ngIf="event.maths === true">Maths</clr-dg-cell>
+                <clr-dg-cell *ngIf="event.physics === true">Physics</clr-dg-cell>
+                <clr-dg-cell>{{event.description}}</clr-dg-cell>
+              
+            </clr-dg-row>
+        
+            
+        </clr-datagrid>
     </div>  
     
     
