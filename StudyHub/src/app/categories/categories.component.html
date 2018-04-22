@@ -17,15 +17,20 @@
         <header style="overflow: hidden !important;">
         <form class="search" (submit)="onSubmit()">
             <label for="search_input">
-                <input id="search_input" type="text" placeholder="Search for keywords...">
+                <input id="search_input" [(ngModel)]="querySearch"  name="querySearch" type="text" placeholder="Search for keywords...">
             </label>
         </form>
         </header>   
           <!-- <h1>Categories</h1> -->
+          <div class="cat-buttons">
           <h2>Categories</h2>
-          <div class="random" *ngFor="let cat of categories">
-              {{cat}}
+         
+          <button class="btn btn-primary" id="Add" (click)="showMyEvents()">All</button> 
+          <div class="random" *ngFor="let cat of categories | filterSearch:querySearch">
+               <button class="btn btn-primary" id="Add" (click)="showMyEvents(cat)">{{cat}}</button> 
+               <!-- <button class="btn" id="Add" (click)="subscribe(cat)">Subscribe</button> -->
           </div>
+        </div>
           <!-- <button class="btn btn-inverse" id="Add" (click)="showCategories()">I did not hit her!
             </button> -->
 
@@ -35,7 +40,7 @@
     <div class="canvas">
     <header class="header header-2" style="overflow: hidden; position: relative;">
         <div class="branding">
-            <a href="..." class="nav-link">
+            <a href="events" class="nav-link">
                 <clr-icon shape="clock" class="is-inverse"></clr-icon>
                 <span class="title">All Events</span>
             </a>
@@ -55,30 +60,29 @@
               </button>
               <clr-dropdown-menu *clrIfOpen  clrPosition="bottom-right">
                   <p clrDropdownItem (click)="sidenav.toggle()">Categories</p>
-                  <a href="..." clrDropdownItem>Events</a> 
-                  <a href="..." clrDropdownItem>Log out</a>
+                  <a href="events" clrDropdownItem>Events</a> 
+                  <a (click)="logout()" clrDropdownItem>Log out</a>
               </clr-dropdown-menu>
           </clr-dropdown>
       </div>
     </header>
     <h1>Events</h1>
-    <!-- <div class="random" *ngFor="let event of events">
-            {{event}}
-    </div> -->
     <clr-datagrid>
             <clr-dg-column>Name</clr-dg-column>
-            <!-- <clr-dg-column>Date</clr-dg-column> -->
+            <clr-dg-column>Date</clr-dg-column>
             <clr-dg-column>Categories</clr-dg-column>
             <clr-dg-column>Description</clr-dg-column>
         
-            <clr-dg-row *ngFor="let event of events">
-                <clr-dg-cell>{{event.name}}</clr-dg-cell>
-                <!-- <clr-dg-cell>{{event.date}}</clr-dg-cell> -->
-                clr-dg-cell *ngIf="event.programming === true">Programming</clr-dg-cell>
-                <clr-dg-cell *ngIf="event.maths === true">Maths</clr-dg-cell>
-                <clr-dg-cell *ngIf="event.physics === true">Physics</clr-dg-cell>
+            <clr-dg-row *ngFor="let event of events | filterCategories:selectedCategory">
+                    <clr-dg-cell>{{event.name}}</clr-dg-cell>
+                    <clr-dg-cell>{{event.date_time}}</clr-dg-cell>
+                <clr-dg-cell>
+                    <p *ngIf="event.maths === 'true'">Maths</p>
+                    <p *ngIf="event.physics === 'true'">Physics</p>
+                    <p *ngIf="event.programming === 'true'">Programming</p>
+                </clr-dg-cell>
+               
                 <clr-dg-cell>{{event.description}}</clr-dg-cell>
-              
             </clr-dg-row>
         
             

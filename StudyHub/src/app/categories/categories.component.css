@@ -7,7 +7,7 @@ clr-dropdown-menu {
 }
 
 .canvas-side { 
-    background-color: antiquewhite;
+    background-color: rgb(219, 228, 224);
     height: 100vh;
 }
 .canvas { 
@@ -21,4 +21,7 @@ h1 {
 #Add {
     position: relative;
     margin-top: 10px;
+}
+.cat-buttons { 
+    padding-left: 10px;
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
+// import * as shajs from 'angular-sha';
 
 
 @Component({
@@ -43,8 +44,10 @@ export class LoginComponent {
     this.router.navigate(['/events']);  
   }
 
+  // not referenced
   logout() {
     this.authService.logout();
+    this.router.navigate(['/login']);  
   }
 
 

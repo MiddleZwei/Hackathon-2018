@@ -62,15 +62,19 @@ export class AuthService {
       .signInWithEmailAndPassword(email, password)
       .then(value => {
         console.log('Nice, it worked!');
+        console.log(firebase.auth().currentUser);
       })
       .catch(err => {
         console.log('Something went wrong:',err.message);
       });
+      
   }
 
   logout() {
+    console.log("You've signed out");
     this.firebaseAuth
       .auth
       .signOut();
+      console.log(firebase.auth().currentUser);
   }
 }

@@ -13,7 +13,7 @@
               </div>
               <div class="form-group">
                   <label for="formFields_12">Date/Time</label>
-                  <input type="datetime-local"  id="formFields_12" size="35">
+                  <input type="datetime-local" [(ngModel)]="date_time" name="date_time" id="formFields_12" size="35">
               </div>
               <div class="form-group">
                   <label for="formFields_12">Categories</label>
@@ -52,7 +52,7 @@
   </mat-dialog-content>
   <hr>
   <mat-dialog-actions>
-    <button mat-raised-button (click)="onCloseConfirm()">Add Event</button>
-    <button mat-raised-button (click)="onCloseCancel()">Cancel</button>
+    <button class="btn btn-primary" (click)="onCloseConfirm()">Add Event</button>
+    <button class="btn btn-warning" (click)="onCloseCancel()">Cancel</button>
   </mat-dialog-actions>
 </div>

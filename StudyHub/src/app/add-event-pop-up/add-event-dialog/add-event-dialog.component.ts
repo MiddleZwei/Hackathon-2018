@@ -18,7 +18,7 @@ export class AddEventDialogComponent implements OnInit {
   }
 
   name: string;
-  // date_time: Date;
+  date_time: string;
   programming: string;
   maths: string;
   physics: string;
@@ -30,7 +30,7 @@ export class AddEventDialogComponent implements OnInit {
     // send data to the database
     const dbList = this.db.list('Event');
     dbList.push({name: !this.name ? "novalue" : this.name, 
-                // date_time: this.date_time.getDate.name,
+                date_time: document.getElementById("formFields_12").value,
                   programming: !this.programming ? "false" : "true",
                   maths: !this.maths ? "false" : "true",
                   physics: !this.physics ? "false" : "true",

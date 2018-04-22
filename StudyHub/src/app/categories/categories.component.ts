@@ -6,6 +6,10 @@ import { AddEventDialogComponent } from '../add-event-pop-up/add-event-dialog/ad
 import { AngularFireObject } from 'angularfire2/database';
 import { AngularFireDatabase, AngularFireList,  } from 'angularfire2/database';
 import { element } from 'protractor';
+import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
+import { FilterCategoriesPipe } from '../filter-categories.pipe';
+import { FilterSearchPipe } from '../filter-search.pipe';
 
 @Component({
   selector: 'app-categories',
@@ -16,12 +20,15 @@ export class CategoriesComponent implements OnInit {
 
   dialogResult = "";
   categories : Category[] = []
-  events : Event[][] = []
+  events : Event[] = []
+  selectedCategory : string = "";
+  querySearch : string = "";
+
   // categories: Array<Category>;
   // categories: FirebaseListObservable<any[]>;
   // item: AngularFireObject<Category>;
     
-  constructor(public dialog: MatDialog, private db: AngularFireDatabase) { 
+  constructor(public dialog: MatDialog, private fc: FilterCategoriesPipe, private router: Router, private db: AngularFireDatabase, public authService: AuthService) { 
     // this.users = db2.list('User');
   }
   ngOnInit() {
@@ -47,11 +54,35 @@ export class CategoriesComponent implements OnInit {
     });
   }
 
-  
+  showMyEvents(cat){
+    // this.fc.transform([cat], null);
+    this.selectedCategory = cat;
+  }
 
-  // iDidNotHitHer() { 
-  //  console.log("Lyoha marry me, please");
+  // onSubmit(search){
+  //   this.selectedCategory = search;
   // }
+
+  subscribe(cat){
+    // this.firebase
+    // this.categories.forEach(element => {
+    //   console.log(element)
+    // })
+    console.log(cat)
+    console.log(this.categories)
+
+    // this.categories.forEach(element => {
+    //   if (element = cat) {
+    //     console.log(element["$key"])
+    //   }
+    // })
+  }
+
+  logout(){
+    this.authService.logout();
+    this.router.navigate(['/login']);  
+  }
+
   openAddEventDialog() {
     console.log("opened");
     let dialogRef = this.dialog.open(AddEventDialogComponent, {
@@ -64,25 +95,13 @@ export class CategoriesComponent implements OnInit {
       this.dialogResult = result;
     })
   }
-  // showCategories(){
-    // var x = this.db.list('Category');
-    // x.snapshotChanges().subscribe(item => {
-    //   item.forEach(element => {
-    //     var y = element.payload.toJSON();
-    //     y["$key"] = element.key;
-    //     this.categories.push(y as Category);
-    //     console.log(y);
-        
-    //   })
-    // });
-  // }
 }
 interface Category {
   tag: string;
 }
 interface Event {
   name: string;
-  // date_time: Date;
+  date_time: string;
   programming: string;
   maths: string;
   physics: string;

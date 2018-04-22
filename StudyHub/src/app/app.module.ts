@@ -12,6 +12,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 // import { DatePipe } from '@angular/common';
+// import { FilterCategoriesPipe } from '../filter-categories.pipe';
 
 import { AuthService } from './auth.service';
 import { CategoriesComponent } from './categories/categories.component';
@@ -22,6 +23,8 @@ import { MatCardModule, MatDialogModule} from '@angular/material';
 // import { AddEventPopUpComponent } from './add-event-pop-up/add-event-pop-up.component';
 import { AddEventDialogComponent } from './add-event-pop-up/add-event-dialog/add-event-dialog.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FilterCategoriesPipe } from './filter-categories.pipe';
+import { FilterSearchPipe } from './filter-search.pipe';
 
 // import * as firebase from 'firebase';
 
@@ -33,7 +36,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     // EventsComponent,
     CategoriesComponent,
     // AddEventPopUpComponent,
-    AddEventDialogComponent
+    AddEventDialogComponent,
+    FilterCategoriesPipe,
+    FilterSearchPipe
 
   ],
   imports: [
@@ -57,7 +62,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   entryComponents: [
     AddEventDialogComponent
   ],
-  providers: [AuthService],
+  providers: [AuthService, FilterCategoriesPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
