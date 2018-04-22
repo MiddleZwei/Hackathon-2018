@@ -7,18 +7,27 @@ import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-
+import { EventsComponent } from './events/events.component';
+import { CategoriesComponent } from './categories/categories.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatCheckboxModule, MatToolbarModule, MatSidenavModule} from '@angular/material';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    EventsComponent,
+    CategoriesComponent
   
   ],
   imports: [
     BrowserModule,
     ClarityModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,17 @@
+h1 { 
+
+    text-align: center;
+   
+}
+#Add {
+    position: relative;
+    margin-top: 10px;
+}
+mat-sidenav {
+    height: 100%;
+    background-color: aqua;
+}
+
+clr-dropdown-menu { 
+    position: fixed !important;
+}

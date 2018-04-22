@@ -1,0 +1,15 @@
+mat-sidenav {
+    height: 100%;
+}
+
+clr-dropdown-menu { 
+    position: fixed !important;
+}
+
+.canvas-side { 
+    background-color: antiquewhite;
+    height: 100vh;
+}
+.canvas { 
+    height: 100vh;
+}
