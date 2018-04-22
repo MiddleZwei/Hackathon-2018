@@ -7,7 +7,6 @@ import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from '../environments/environment';
@@ -15,7 +14,11 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { AuthService } from './auth.service';
 import { EventsComponent } from './events/events.component';
-
+import { CategoriesComponent } from './categories/categories.component';
+import { MatCardModule, MatDialogModule, MatButtonModule } from '@angular/material';
+// import { AddEventPopUpComponent } from './add-event-pop-up/add-event-pop-up.component';
+import { AddEventDialogComponent } from './add-event-pop-up/add-event-dialog/add-event-dialog.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // import * as firebase from 'firebase';
 
@@ -24,8 +27,11 @@ import { EventsComponent } from './events/events.component';
   declarations: [
     AppComponent,
     LoginComponent,
-    EventsComponent
-    
+    EventsComponent,
+    CategoriesComponent,
+    // AddEventPopUpComponent,
+    AddEventDialogComponent
+
   ],
   imports: [
     BrowserModule,
@@ -35,7 +41,14 @@ import { EventsComponent } from './events/events.component';
     HttpModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    MatDialogModule,
+    MatCardModule,
+    MatButtonModule,
+    BrowserAnimationsModule
+  ],
+  entryComponents: [
+    AddEventDialogComponent
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

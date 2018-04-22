@@ -13,4 +13,5 @@ export const environment = {
       storageBucket: "studyhub-d1766.appspot.com",
       messagingSenderId: "627276480992"
     }
+
 };
