@@ -6,6 +6,7 @@ import { CategoriesComponent } from './categories/categories.component';
 
 
 
+
 const appRoutes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
