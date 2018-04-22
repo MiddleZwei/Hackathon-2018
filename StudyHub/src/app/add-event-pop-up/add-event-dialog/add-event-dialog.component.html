@@ -1,15 +1,52 @@
 <div>
-  <h2 mat-dialog-title>MY DIALOG</h2>
+  <h2 mat-dialog-title>Register event</h2>
   <hr>
-  <mat-dialog-content>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe placeat accusantium facere laboriosam non, atque incidunt sed temporibus ad molestiae consequatur at impedit nam suscipit repudiandae vero dicta doloribus, deleniti.
-    <br>
-    <br>
-    <strong>{{data}}</strong>
+  <mat-dialog-content> 
+      <form>
+          <section class="form-block" >        
+          
+              <div class="form-group">
+                  <label for="formFields_1">Name</label>
+
+                  <input type="text" id="formFields_5">
+
+              </div>
+              <div class="form-group">
+                  <label for="formFields_12">Date/Time</label>
+                  <input type="datetime-local" id="formFields_12" size="35">
+              </div>
+              <div class="form-group">
+                  <label for="formFields_12">Categories</label>
+                  <clr-checkbox
+                  [clrChecked]="false"
+                  [clrInline]="true">
+            Category from DB
+          </clr-checkbox>
+          <clr-checkbox
+                  [clrChecked]="false"
+                  [clrInline]="true">
+                  Category from DB 2
+          </clr-checkbox>
+          <clr-checkbox
+                  [clrChecked]="false"
+                  [clrInline]="true">
+                  Category from DB 3
+          </clr-checkbox>
+              </div>
+              <div class="form-group">
+                  <label for="formFields_8">Description</label>
+                  <textarea id="formFields_8" rows="5"></textarea>
+              </div>
+           
+       
+              
+           
+            </section>
+      </form>
   </mat-dialog-content>
   <hr>
   <mat-dialog-actions>
-    <button mat-raised-button (click)="onCloseConfirm()">CONFIRM</button>
-    <button mat-raised-button (click)="onCloseCancel()">CANCEL</button>
+    <button mat-raised-button (click)="onCloseConfirm()">Add Event</button>
+    <button mat-raised-button (click)="onCloseCancel()">Cancel</button>
   </mat-dialog-actions>
 </div>

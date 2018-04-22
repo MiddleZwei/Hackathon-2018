@@ -13,3 +13,12 @@ clr-dropdown-menu {
 .canvas { 
     height: 100vh;
 }
+h1 { 
+
+    text-align: center;
+   
+}
+#Add {
+    position: relative;
+    margin-top: 10px;
+}
